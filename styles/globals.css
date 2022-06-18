@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, Roboto;
+}
+
+.icon {
+  display: inline;
+  vertical-align: middle;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.gradient-text {
+  font-weight: bold;
+  background: -webkit-linear-gradient(#e8ded2, #a3d2ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #5eaaa8;
+  color: #fff
+}
