@@ -1,5 +1,6 @@
 import { useUser } from "@auth0/nextjs-auth0";
 import Login from "../components/Login";
+import Dashboard from "../components/Dashboard";
 
 const Home = () => {
   const { user, isLoading } = useUser();
@@ -8,7 +9,7 @@ const Home = () => {
     <div className="container">
       {user && (
         <>
-          <p>Welcome, {user.name}! You are logged in.</p>
+          <Dashboard user={user}/>
         </>
       )}
       {!user && !isLoading && <Login />}

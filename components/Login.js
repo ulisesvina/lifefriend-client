@@ -9,7 +9,7 @@ const Login = () => {
         <br />
         <div className="flex flex-col items-center justify-center mt-10">
           <a href="/api/auth/login">
-            <button className="text-3xl bg-accent text-white font-bold py-2 px-4 rounded opacity-50">
+            <button className="text-3xl bg-accent text-white font-bold py-2 px-4 rounded">
               Log in or register
             </button>
           </a>

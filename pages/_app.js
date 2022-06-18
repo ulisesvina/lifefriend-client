@@ -12,7 +12,7 @@ const App = ({ Component, pageProps }) => {
           <title>LifeFriend</title>
         </Head>
         <Header />
-        <div className="mb-auto">
+        <div className="mt-10 mb-auto">
           <Component {...pageProps} />
         </div>
         <Footer />

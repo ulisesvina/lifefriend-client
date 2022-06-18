@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       {isLogged && (
-        <header className="top-0 sticky p-8 bg-white">
+        <header className="top-0 sticky p-8 bg-dark">
           <div className="flex items-center justify-between flex-wrap">
             <div className="flex-shrink-0 lg:mr-6">
               <Link href="/">
@@ -41,12 +41,27 @@ const Header = () => {
               <ul className="lg:flex-grow">
                 <li className="lg:inline-block">
                   <Link href="/">
-                    <a className="block mt-4 lg:inline mr-4 lg:mt-0">Home</a>
+                    <a className="block mt-4 lg:inline mr-4 lg:mt-0 text-main">Home</a>
+                  </Link>
+                </li>
+                <li className="lg:inline-block">
+                  <Link href="/documents">
+                    <a className="block mt-4 lg:inline mr-4 lg:mt-0 text-light">Documents</a>
+                  </Link>
+                </li>
+                <li className="lg:inline-block">
+                  <Link href="/emergencies">
+                    <a className="block mt-4 lg:inline mr-4 lg:mt-0 text-accent">Nearby Emergencies</a>
+                  </Link>
+                </li>
+                <li className="lg:inline-block">
+                  <Link href="/help">
+                    <a className="block mt-4 lg:inline mr-4 lg:mt-0 text-secondary">Medical Help</a>
                   </Link>
                 </li>
                 <li className="lg:inline-block">
                   <a href="/api/auth/logout">
-                    <a className="block mt-4 lg:inline mr-4 lg:mt-0 text-red">Logout</a>
+                    <p className="block mt-4 lg:inline mr-4 lg:mt-0 text-red">Logout</p>
                   </a>
                 </li>
               </ul>
@@ -55,7 +70,7 @@ const Header = () => {
         </header>
       )}
       {!isLogged && (
-        <header className="top-0 sticky p-8 bg-white text-center">
+        <header className="top-0 sticky p-8 bg-dark text-center">
           <Link href="/">
             <span className="text-3xl font-bold">LifeFriend</span>
           </Link>
