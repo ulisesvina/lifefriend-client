@@ -35,7 +35,9 @@ const NewEmergency = () => {
         },
         body: JSON.stringify(data),
       }).then(res => res.json()).then(data => {
-        console.log(data)
+        if(data.success) {
+          window.location.replace("https://www.lifefriend.tech/emergencies"); 
+        }
       })
   };
 
