@@ -1,6 +1,6 @@
 export const getServerSideProps = async () => {
   const diseases = await fetch(
-    "http://localhost:3000/api/medical/fetchAll"
+    "/api/medical/fetchAll"
   ).then((response) => response.json());
 
   return { props: { diseases } };
