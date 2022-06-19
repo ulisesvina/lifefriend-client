@@ -4,7 +4,7 @@ const Dashboard = ({ user }) => {
   const [date, setDate] = useState(Date.now());
 
   const fetchDate = async () => {
-    const data = await fetch("/api/crud/fetchLastUpdatedDate", {
+    const data = await fetch("/api/crud/fetchLastUpdatedDate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -25,8 +25,6 @@ const Dashboard = ({ user }) => {
       body: JSON.stringify({
         email: user.email
       })
-    }).then(res => res.text()).then(data => {
-      console.log(data)
     });
 
     fetchDate();

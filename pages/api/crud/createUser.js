@@ -1,7 +1,7 @@
 import prisma from '../../../lib/prismaclient';
 
 const handler = async (req, res) => {
-    const { email } = req.body; // The error originated from here
+    const { email } = req.body;
     const user = await prisma.user.findMany({
         where: {
             id: email,

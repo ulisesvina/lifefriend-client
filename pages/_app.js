@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }) => {
         </Head>
         <Header />
         <div className="mt-10 mb-auto">
-          <Component {...pageProps} />
+          <Component {...pageProps}/>
         </div>
         <Footer />
       </div>
