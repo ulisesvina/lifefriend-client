@@ -1,6 +1,36 @@
-const Dashboard = ({ user }) => {
+import { useEffect, useState } from "react";
 
-  console.log(user.sub.split("|")[1])
+const Dashboard = ({ user }) => {
+  const [date, setDate] = useState(Date.now());
+
+  const fetchDate = async () => {
+    const data = await fetch("/api/crud/fetchLastUpdatedDate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: user.email
+      }),
+    }).then(res => res.json());
+    setDate(data.date);
+  }
+
+  useEffect(() => {
+    fetch("/api/crud/createUser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: user.email
+      })
+    }).then(res => res.text()).then(data => {
+      console.log(data)
+    });
+
+    fetchDate();
+  }, []);
 
   return (
     <div className="container">
@@ -29,7 +59,7 @@ const Dashboard = ({ user }) => {
           months.
         </p>
         <p className="text-lg">
-          <b>Last update was on</b> {new Date().toLocaleDateString()}
+          <b>Last update was on</b> {new Date(date).toLocaleDateString()}
         </p>
       </div>
     </div>

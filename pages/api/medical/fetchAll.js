@@ -109,7 +109,7 @@ export const diseases = [
       "Taking breaks from stressful situations",
       "Prescription drugs for severe headaches",
     ],
-  },
+  }
 ];
 
 const handler = async (req, res) => {
