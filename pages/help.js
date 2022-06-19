@@ -14,6 +14,19 @@ const Help = ({ diseases }) => {
       </h1>
       <div className="mt-10">
         <h2 className="text-2xl mb-5">
+          Nearby Hospitals
+        </h2>
+        <iframe
+          width={600}
+          height={450}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQ-2bhypM9mEoFbYNIC4S3u7OAA9tjusY&q=hospital"
+        ></iframe>
+      </div>
+      <div className="mt-10">
+        <h2 className="text-2xl mb-5">
           Common diseases
         </h2>
         {diseases.map((disease) => (
