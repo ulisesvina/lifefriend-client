@@ -17,17 +17,16 @@ export const getServerSideProps = async (ctx) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      email: session.email,
+      email: session.user.email,
     }),
   }).then((res) => res.json());
 
   return {
-    props: { resp, user: JSON.parse(JSON.stringify(session.user)) },
+    props: { docs: resp.docs, user: JSON.parse(JSON.stringify(session.user)) },
   };
 };
 
-const Documents = ({ resp, user }) => {
-  const { docs } = resp;
+const Documents = ({ docs, user }) => {
   const select = useRef(null);
   const divSel = useRef(null);
   const divWidget = useRef(null);
