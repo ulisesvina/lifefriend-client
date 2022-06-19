@@ -1,6 +1,6 @@
 export const getServerSideProps = async () => {
   const diseases = await fetch(
-    "/api/medical/fetchAll"
+    "https://lifefriend.tech/api/medical/fetchAll"
   ).then((response) => response.json());
 
   return { props: { diseases } };
