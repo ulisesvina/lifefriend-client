@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useUser } from "@auth0/nextjs-auth0";
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
-const NewEmergency = () => {
+export default withPageAuthRequired(_ => {
   const [coords, setCoords] = useState({ lat: 0, lng: 0 });
   const { user } = useUser();
 
@@ -107,6 +107,4 @@ const NewEmergency = () => {
       </div>
     </>
   );
-};
-
-export default NewEmergency;
+});

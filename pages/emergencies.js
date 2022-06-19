@@ -1,6 +1,7 @@
 import doge from "../public/img/doge.png";
 import Image from "next/image";
 import Link from "next/link";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 export const getServerSideProps = async (ctx) => {
   const url = !!process.env.DEV
@@ -20,7 +21,7 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-const Emergencies = ({ reports }) => {
+export default withPageAuthRequired(({ reports }) => {
   return (
     <div className="container">
       <h1 className="text-5xl mb-10">
@@ -65,6 +66,4 @@ const Emergencies = ({ reports }) => {
       )}
     </div>
   );
-};
-
-export default Emergencies;
+});

@@ -1,4 +1,4 @@
-import { getSession } from "@auth0/nextjs-auth0";
+import { getSession, withPageAuthRequired} from "@auth0/nextjs-auth0";
 import { useRef, useState } from "react";
 import { Widget } from "@uploadcare/react-widget";
 import Image from "next/image";
@@ -26,7 +26,7 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-const Documents = ({ docs, user }) => {
+export default withPageAuthRequired(({ docs, user }) => {
   const select = useRef(null);
   const divSel = useRef(null);
   const divWidget = useRef(null);
@@ -163,6 +163,4 @@ const Documents = ({ docs, user }) => {
       </div>
     </div>
   );
-};
-
-export default Documents;
+});

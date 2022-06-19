@@ -1,3 +1,5 @@
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+
 export const getServerSideProps = async () => {
   const diseases = await fetch(
     "https://lifefriend.tech/api/medical/fetchAll"
@@ -6,7 +8,7 @@ export const getServerSideProps = async () => {
   return { props: { diseases } };
 };
 
-const Help = ({ diseases }) => {
+export default withPageAuthRequired(({ diseases }) => {
   return (
     <div className="container">
       <h1 className="text-5xl">
@@ -40,6 +42,4 @@ const Help = ({ diseases }) => {
       </div>
     </div>
   );
-};
-
-export default Help;
+});
