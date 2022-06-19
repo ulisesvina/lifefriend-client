@@ -27,9 +27,9 @@ const Emergencies = ({ reports }) => {
         <b>Nearby Emergencies</b>
       </h1>
       <div className="inline-block mt-5">
-      <h2 className="text-3xl mb-10 m-5">
-        <b>Are you in danger?</b>
-      </h2>
+        <h2 className="text-3xl mb-10 m-5">
+          <b>Are you in danger?</b>
+        </h2>
       </div>
       <Link className="inline-block mt-5" href="/newemergency">
         <button className="text-xl bg-red text-white font-bold py-2 px-4 rounded-2xl">
@@ -42,7 +42,26 @@ const Emergencies = ({ reports }) => {
           <span className="ml-3 text-2xl doge">Wow! Such empty!</span>
         </div>
       ) : (
-        reports.map((report) => report.title)
+        reports.map((report) => (
+          <div className="mb-5 bg-main text-dark w-full p-5 rounded-3xl">
+            <h1 className="text-2xl">
+              <b>{report.title}</b>
+            </h1>
+            <p className="text-md">{report.content}</p>
+            <p className="text-xl mt-5">
+              <b>Map</b>
+              <iframe
+                width={"100%"}
+                height={300 + "px"}
+                className="rounded"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCQ-2bhypM9mEoFbYNIC4S3u7OAA9tjusY&q=${report.location}`}
+              ></iframe>
+            </p>
+          </div>
+        ))
       )}
     </div>
   );
