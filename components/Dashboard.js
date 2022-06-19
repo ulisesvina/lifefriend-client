@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Dashboard = ({ user }) => {
@@ -45,11 +46,11 @@ const Dashboard = ({ user }) => {
             !
           </h1>
         </div>
-        <div className="inline-block mt-5">
+        <Link className="inline-block mt-5" href="/newemergency">
           <button className="text-xl bg-red text-white font-bold py-2 px-4 rounded-2xl">
             Emergency
           </button>
-        </div>
+        </Link>
       </div>
       <div className="mt-10">
         <p className="text-sm">

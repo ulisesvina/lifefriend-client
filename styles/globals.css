@@ -10,6 +10,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Comic Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/comicsans.ttf') format("truetype");
+  font-display: swap;
+}
+
 :root {
   padding: 0;
   margin: 0;
@@ -34,4 +42,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1.5px #5eaaa8;
+}
+
+.doge {
+  font-family: "Comic Sans" !important;
 }

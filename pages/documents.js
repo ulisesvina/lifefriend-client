@@ -98,8 +98,8 @@ const Documents = ({ docs, user }) => {
           <>
             <div className="flex justify-center items-center">
               <Image src={doge} width={43 + "px"} height={49.4 + "px"} />
-              <span className="ml-3 text-xl">
-                <b>Wow! Such empty</b>
+              <span className="ml-3 text-2xl doge ">
+                Wow! Such empty!
               </span>
             </div>
             <div className="mt-10">
