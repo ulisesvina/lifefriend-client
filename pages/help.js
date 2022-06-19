@@ -22,7 +22,7 @@ const Help = ({ diseases }) => {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GMAPS_API_KEY}&q=hospital`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCQ-2bhypM9mEoFbYNIC4S3u7OAA9tjusY&q=hospital`}
         ></iframe>
       </div>
       <div className="mt-10">

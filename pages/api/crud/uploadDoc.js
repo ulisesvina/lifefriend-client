@@ -14,6 +14,15 @@ const handler = async (req, res) => {
                 file
             }
         });
+
+        await prisma.user.update({
+            where: {
+                id: email,
+            },
+            data: {
+                lastDocUpdate: new Date(),
+            },
+        })
     
         res.json({
             success: true,
