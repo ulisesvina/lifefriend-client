@@ -12,12 +12,12 @@ const Help = ({ diseases }) => {
       <h1 className="text-5xl">
         <b>Medical Help</b>
       </h1>
-      <div className="mt-5">
-        <h2 className="text-2xl">
+      <div className="mt-10">
+        <h2 className="text-2xl mb-5">
           Common diseases
         </h2>
         {diseases.map((disease) => (
-          <div className="m-5 bg-main text-dark w-full p-5 rounded-3xl">
+          <div className="mb-5 bg-main text-dark w-full p-5 rounded-3xl">
             <h1 className="text-2xl"><b>{disease.name}</b></h1>
             <p className="text-md">{disease.description}</p>
             <p className="text-sm mt-5"><b>Symptoms</b> {disease.symptoms}</p>

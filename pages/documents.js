@@ -6,7 +6,9 @@ import doge from "../public/img/doge.png";
 export const getServerSideProps = async (ctx) => {
   const session = getSession(ctx.req, ctx.res);
 
-  const resp = await fetch("http://localhost:3000/api/crud/fetchDocsByUser", {
+  const url = !!process.env.DEV ? "http://localhost:3000/api/crud/fetchDocsByUser" : "https://lifefriend.tech/api/crud/fetchDocsByUser"
+
+  const resp = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
